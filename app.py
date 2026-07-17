@@ -95,7 +95,7 @@ _db_env_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'databas
 load_dotenv(_root_env_path, override=False)
 load_dotenv(_db_env_path, override=False)
 
-app = Flask(__name__, static_folder=None)
+app = Flask(__name__)
 _secret_key = os.getenv('SECRET_KEY', '')
 if not _secret_key:
     import warnings
@@ -14819,15 +14819,6 @@ def active_sheet_events(current_user):
     )
 
 _seed_recovery_narrative()
-
-@app.route('/', defaults={'path': ''})
-@app.route('/<path:path>')
-def serve_react(path):
-    dist_dir = os.path.join(_APP_ROOT, 'frontend', 'dist')
-    full_path = os.path.join(dist_dir, path)
-    if path != "" and os.path.exists(full_path) and os.path.isfile(full_path):
-        return send_from_directory(dist_dir, path)
-    return send_from_directory(dist_dir, 'index.html')
 
 if __name__ == '__main__':
     def _env_bool(name: str, default: bool = False) -> bool:
