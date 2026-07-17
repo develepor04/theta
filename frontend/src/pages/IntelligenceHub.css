@@ -1,0 +1,214 @@
+/* Intelligence Hub — Professional BI Dashboard Shell */
+
+.ih-pro-shell {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.ih-pro-header {
+  border: 1px solid rgba(99, 102, 241, 0.14);
+  background:
+    radial-gradient(circle at 12% 0%, rgba(59, 130, 246, 0.12), transparent 38%),
+    radial-gradient(circle at 100% 100%, rgba(14, 165, 233, 0.08), transparent 36%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.82));
+}
+
+.ih-pro-title-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ih-pro-title-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.ih-pro-logo {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background: linear-gradient(135deg, #2563eb, #4f46e5);
+  box-shadow: 0 6px 18px rgba(79, 70, 229, 0.3);
+}
+
+.ih-pro-badge {
+  padding: 5px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(59, 130, 246, 0.25);
+  background: rgba(239, 246, 255, 0.7);
+  color: #1d4ed8;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.ih-pro-subtitle {
+  margin: 0;
+  color: #475569;
+  font-size: 0.86rem;
+  max-width: 780px;
+  line-height: 1.5;
+}
+
+.ih-pro-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.ih-chip {
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  background: rgba(255, 255, 255, 0.85);
+  color: #475569;
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  cursor: default;
+}
+
+.ih-chip.active {
+  color: #fff;
+  border-color: transparent;
+  background: linear-gradient(135deg, #2563eb, #4f46e5);
+  box-shadow: 0 6px 18px rgba(79, 70, 229, 0.3);
+}
+
+.ih-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.ih-summary-card {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  border-radius: 16px;
+  padding: 14px;
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.05);
+}
+
+.ih-summary-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.ih-summary-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.ih-summary-title {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 700;
+  color: #64748b;
+}
+
+.ih-summary-value {
+  font-size: 1rem;
+  color: #0f172a;
+  line-height: 1.3;
+}
+
+.ih-summary-subtitle {
+  font-size: 0.78rem;
+  color: #64748b;
+  line-height: 1.35;
+}
+
+.ih-summary-card.tone-indigo .ih-summary-icon {
+  background: linear-gradient(135deg, #4f46e5, #2563eb);
+}
+
+.ih-summary-card.tone-emerald .ih-summary-icon {
+  background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.ih-summary-card.tone-amber .ih-summary-icon {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+}
+
+.ih-analytics-surface {
+  border-radius: 20px;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  background: linear-gradient(180deg, rgba(248, 250, 252, 0.88), rgba(255, 255, 255, 0.96));
+  padding: 14px;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.06);
+}
+
+.ih-analytics-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 12px;
+  padding: 8px 10px;
+  border-radius: 12px;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.ih-analytics-heading {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #334155;
+  font-weight: 700;
+  font-size: 0.82rem;
+}
+
+.ih-analytics-heading svg {
+  color: #4f46e5;
+}
+
+.ih-analytics-pill {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: rgba(16, 185, 129, 0.13);
+  color: #047857;
+  border: 1px solid rgba(16, 185, 129, 0.25);
+}
+
+@media (max-width: 1024px) {
+  .ih-summary-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .ih-summary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ih-analytics-topbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

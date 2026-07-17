@@ -1,0 +1,512 @@
+@import "tailwindcss";
+
+/* ═══════════════════════════════════════════════════════════
+   Global Design Tokens
+═══════════════════════════════════════════════════════════ */
+:root {
+  /* Brand – emerald green (unchanged) */
+  --brand:          #10b981;
+  --brand-dark:     #059669;
+  --brand-light:    #34d399;
+  --brand-gradient: linear-gradient(135deg, #059669, #10b981, #34d399);
+  --brand-shadow:   0 4px 14px rgba(16, 185, 129, 0.38);
+
+  /* Text scale (unchanged) */
+  --ink:    #0f172a;
+  --text:   #1e293b;
+  --muted:  #64748b;
+  --subtle: #94a3b8;
+
+  /* Surfaces (unchanged) */
+  --surface:       #ffffff;
+  --surface-faint: #f8fafc;
+  --surface-glass: rgba(255, 255, 255, 0.85);
+
+  /* Borders (unchanged) */
+  --border:       rgba(148, 163, 184, 0.2);
+  --border-solid: #e2e8f0;
+
+  /* Shadows – elevation scale */
+  --shadow-xs: 0 1px 3px rgba(0, 0, 0, 0.04);
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.10);
+  --shadow-xl: 0 24px 56px rgba(0, 0, 0, 0.12);
+
+  /* Border radii — slightly more generous for a softer modern feel */
+  --r-sm:   10px;
+  --r-md:   14px;
+  --r-lg:   18px;
+  --r-xl:   22px;
+  --r-2xl:  28px;
+  --r-full: 999px;
+
+  /* Layout */
+  --sidebar-w: 260px;
+  --navbar-h:  56px;
+
+  /* Typography — Plus Jakarta Sans */
+  --font:      'Plus Jakarta Sans', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-sans: var(--font);
+  --font-mono: 'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
+
+  /* Transition timing functions */
+  --ease-out:        cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out:     cubic-bezier(0.45, 0, 0.55, 1);
+  --ease-spring:     cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-snappy:     cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+  /* Transition durations */
+  --t-fast:   0.12s;
+  --t-base:   0.2s;
+  --t-slow:   0.35s;
+
+  /* Prebuilt transition shorthands */
+  --transition-fast:   var(--t-fast) var(--ease-out);
+  --transition-base:   var(--t-base) var(--ease-out);
+  --transition-slow:   var(--t-slow) var(--ease-out);
+  --transition-spring: var(--t-slow) var(--ease-spring);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   Base Reset
+═══════════════════════════════════════════════════════════ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: -0.01em;
+  font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1;
+}
+
+/* Global interactive element transitions */
+button,
+a,
+input,
+select,
+textarea {
+  font-family: inherit;
+  transition:
+    color var(--transition-fast),
+    background var(--transition-fast),
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast),
+    opacity var(--transition-fast);
+}
+
+button:not(:disabled) {
+  cursor: pointer;
+}
+
+button:active:not(:disabled) {
+  transform: scale(0.97);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   Consistent Page Background
+═══════════════════════════════════════════════════════════ */
+.dashboard-page,
+.history-page,
+.chat-page,
+.base-insights-page,
+.knowledge-page,
+.subscription-page,
+.output-page,
+.profile-page {
+  background:
+    radial-gradient(ellipse at 85% 15%, rgba(16, 185, 129, 0.07) 0%, transparent 50%),
+    radial-gradient(ellipse at 10% 85%, rgba(52, 211, 153, 0.05) 0%, transparent 45%),
+    linear-gradient(180deg, #fafcfb 0%, #f8fafc 100%) !important;
+  background-attachment: fixed !important;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   Keyframe Library
+═══════════════════════════════════════════════════════════ */
+
+/* Page entry — content slides up softly on route change */
+@keyframes pageEnter {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+/* Fade up — for cards, sections appearing */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px) scale(0.99); }
+  to   { opacity: 1; transform: translateY(0)    scale(1);    }
+}
+
+/* Fade in — pure opacity */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Scale in — for modals, popovers, dropdowns */
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.95) translateY(-4px); }
+  to   { opacity: 1; transform: scale(1)    translateY(0);    }
+}
+
+/* Slide in from right — for drawers/panels */
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(24px); }
+  to   { opacity: 1; transform: translateX(0);    }
+}
+
+/* Slide in from left — for mobile sidebar */
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-24px); }
+  to   { opacity: 1; transform: translateX(0);     }
+}
+
+/* Slide down — for inline notifications, banners */
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0);     }
+}
+
+/* Shimmer — for skeleton loading states */
+@keyframes shimmer {
+  0%   { background-position: -400px 0; }
+  100% { background-position:  400px 0; }
+}
+
+/* Pulse glow — for brand highlights */
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+  50%       { box-shadow: 0 0 0 6px rgba(16, 185, 129, 0.15); }
+}
+
+/* Spin — for loading spinners */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Bounce in — for success confirmations */
+@keyframes bounceIn {
+  0%   { opacity: 0; transform: scale(0.7); }
+  60%  { opacity: 1; transform: scale(1.06); }
+  80%  { transform: scale(0.97); }
+  100% { transform: scale(1); }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   Animation Utility Classes
+═══════════════════════════════════════════════════════════ */
+.anim-page-enter   { animation: pageEnter   0.3s  var(--ease-out)    both; }
+.anim-fade-up      { animation: fadeUp      0.35s var(--ease-out)    both; }
+.anim-fade-in      { animation: fadeIn      0.25s var(--ease-out)    both; }
+.anim-scale-in     { animation: scaleIn     0.22s var(--ease-spring) both; }
+.anim-slide-right  { animation: slideInRight 0.3s var(--ease-out)   both; }
+.anim-slide-left   { animation: slideInLeft  0.3s var(--ease-out)   both; }
+.anim-slide-down   { animation: slideDown   0.25s var(--ease-out)   both; }
+.anim-bounce-in    { animation: bounceIn    0.45s var(--ease-spring) both; }
+.anim-spin         { animation: spin 0.75s linear infinite; }
+
+/* Stagger delays for list items */
+.stagger > *:nth-child(1) { animation-delay: 0ms; }
+.stagger > *:nth-child(2) { animation-delay: 40ms; }
+.stagger > *:nth-child(3) { animation-delay: 80ms; }
+.stagger > *:nth-child(4) { animation-delay: 120ms; }
+.stagger > *:nth-child(5) { animation-delay: 160ms; }
+.stagger > *:nth-child(6) { animation-delay: 200ms; }
+.stagger > *:nth-child(n+7) { animation-delay: 240ms; }
+
+/* ═══════════════════════════════════════════════════════════
+   Skeleton / Loading
+═══════════════════════════════════════════════════════════ */
+.skeleton {
+  border-radius: var(--r-sm);
+  background: linear-gradient(
+    90deg,
+    #f0f0f0 25%,
+    #e8e8e8 37%,
+    #f0f0f0 63%
+  );
+  background-size: 400px 100%;
+  animation: shimmer 1.4s ease infinite;
+}
+
+.skeleton-text  { height: 14px; margin-bottom: 8px; }
+.skeleton-title { height: 20px; width: 60%; margin-bottom: 12px; }
+.skeleton-rect  { height: 80px; width: 100%; }
+
+/* ═══════════════════════════════════════════════════════════
+   Page Animation
+═══════════════════════════════════════════════════════════ */
+.main-content,
+.chat-main,
+.te-main {
+  animation: pageEnter 0.3s var(--ease-out) both;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   Shared Card Style
+═══════════════════════════════════════════════════════════ */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-xl);
+  box-shadow: var(--shadow-xs);
+  transition:
+    box-shadow  var(--transition-base),
+    transform   var(--transition-base),
+    border-color var(--transition-base);
+}
+
+.card:hover {
+  box-shadow:   var(--shadow-md);
+  border-color: rgba(16, 185, 129, 0.18);
+  transform:    translateY(-2px);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   Shared Button Utilities
+═══════════════════════════════════════════════════════════ */
+.btn-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 18px;
+  background: var(--brand-gradient);
+  color: #fff;
+  border: none;
+  border-radius: var(--r-md);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  cursor: pointer;
+  transition:
+    transform   var(--transition-base),
+    box-shadow  var(--transition-base);
+  box-shadow: var(--brand-shadow);
+}
+
+.btn-brand:hover:not(:disabled) {
+  transform:  translateY(-2px);
+  box-shadow: 0 8px 22px rgba(16, 185, 129, 0.48);
+}
+
+.btn-brand:active:not(:disabled) {
+  transform:  translateY(0) scale(0.97);
+  box-shadow: var(--brand-shadow);
+}
+
+.btn-brand:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition:
+    background    var(--transition-fast),
+    color         var(--transition-fast),
+    border-color  var(--transition-fast);
+}
+
+.btn-ghost:hover {
+  background:   rgba(16, 185, 129, 0.07);
+  color:        var(--text);
+  border-color: rgba(16, 185, 129, 0.25);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   Consistent Scrollbar
+═══════════════════════════════════════════════════════════ */
+::-webkit-scrollbar       { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background:    rgba(148, 163, 184, 0.35);
+  border-radius: 3px;
+  transition:    background var(--transition-fast);
+}
+::-webkit-scrollbar-thumb:hover { background: rgba(100, 116, 139, 0.55); }
+
+/* ═══════════════════════════════════════════════════════════
+   Focus Ring
+═══════════════════════════════════════════════════════════ */
+*:focus-visible {
+  outline:        2px solid var(--brand);
+  outline-offset: 2px;
+  border-radius:  var(--r-sm);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   Shared Page Header Bar
+═══════════════════════════════════════════════════════════ */
+.page-header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 24px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid var(--border);
+  border-radius: var(--r-xl);
+  box-shadow: var(--shadow-sm);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  margin-bottom: 20px;
+  animation: fadeUp 0.3s var(--ease-out) both;
+}
+
+.page-header-bar h1,
+.page-header-bar .page-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--ink);
+  letter-spacing: -0.5px;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.page-header-bar p,
+.page-header-bar .page-subtitle {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin: 3px 0 0;
+  font-weight: 400;
+}
+
+.page-header-bar .page-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   Shared Section Title
+═══════════════════════════════════════════════════════════ */
+.section-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.section-title {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.2px;
+  margin: 0;
+}
+
+.section-subtitle {
+  font-size: 0.75rem;
+  color: var(--muted);
+  font-weight: 400;
+  margin: 3px 0 0;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   Shared Badge
+═══════════════════════════════════════════════════════════ */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 9px;
+  border-radius: var(--r-full);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+.badge-brand {
+  background: rgba(16, 185, 129, 0.1);
+  color: #059669;
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.badge-neutral {
+  background: var(--surface-faint);
+  color: var(--muted);
+  border: 1px solid var(--border-solid);
+}
+
+.badge-warning {
+  background: #fffbeb;
+  color: #92400e;
+  border: 1px solid #fde68a;
+}
+
+.badge-danger {
+  background: #fef2f2;
+  color: #991b1b;
+  border: 1px solid #fecaca;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   Global Spinner Utility
+   Used by Loader2 icon across auth and app pages.
+═══════════════════════════════════════════════════════════ */
+.spinning {
+  animation: spin 0.75s linear infinite;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   Shared Data Table
+═══════════════════════════════════════════════════════════ */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8rem;
+}
+
+.data-table thead tr {
+  background: var(--surface-faint);
+  border-bottom: 2px solid var(--border-solid);
+}
+
+.data-table thead th {
+  padding: 11px 14px;
+  text-align: left;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.data-table tbody td {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+  line-height: 1.5;
+  transition: background var(--transition-fast);
+}
+
+.data-table tbody tr:last-child td { border-bottom: none; }
+
+.data-table tbody tr:hover td {
+  background: rgba(16, 185, 129, 0.03);
+}

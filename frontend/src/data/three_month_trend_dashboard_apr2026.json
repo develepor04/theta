@@ -1,0 +1,271 @@
+{
+  "source_file": "three_month_trend_dashboard_apr2026.html",
+  "title": "Borouge EU3 three-month trend analysis February to April 2026",
+  "summary": {
+    "headline": "Mechanical Completion has slipped 62 days from 20 Jan 2027 to 23 Mar 2027",
+    "body": "All three terminal milestones have moved 62 calendar days from the April 2026 schedule baseline. MC: 20 Jan to 23 Mar 2027. RFSU: 21 Apr to 22 Jun 2027. PAC: 20 Jul to 20 Sep 2027. The slip is driven by the A15750 civil foundation chain (103-day finish variance), partially offset by 98 days of embedded compression (85d civil + 13d compressor). The April 17 P6 cut-off showed an interim +28d figure; the full processed April schedule confirms +62d across all terminal milestones."
+  },
+  "metrics": [
+    {
+      "value": "+62d",
+      "label": "MC slip vs baseline (Jan 20 to Mar 23, 2027)",
+      "change_note": "All milestones impacted",
+      "severity": "red"
+    },
+    {
+      "value": "+15d",
+      "label": "C1000 float - improved from +4d (Mar) despite absolute date slip",
+      "change_note": "Compressor chain healthier",
+      "severity": "green"
+    },
+    {
+      "value": "+112",
+      "label": "New completions Mar to Apr (vs +405 Feb to Mar) - rate slowed 72%",
+      "change_note": "Productivity concern",
+      "severity": "amber"
+    },
+    {
+      "value": "2",
+      "label": "Vendor drawings still at 1-day float - persisting since March",
+      "change_note": "A31580, A34220 stuck",
+      "severity": "red"
+    }
+  ],
+  "trend_rows": [
+    {
+      "label": "MC milestone",
+      "feb": "20 Jan 27 | TF=0",
+      "mar": "20 Jan 27 | TF=0",
+      "apr": "23 Mar 27 | +62d SLIP"
+    },
+    {
+      "label": "C1000 foundation check TF",
+      "feb": "TF = -7d | NEGATIVE",
+      "mar": "TF = +4d | RECOVERED",
+      "apr": "TF = +15d | IMPROVING"
+    },
+    {
+      "label": "A15860 concrete curing EF",
+      "feb": "04 Mar 26 | TF=0",
+      "mar": "01 Apr 26 | TF=11d",
+      "apr": "29 Apr 26 | TF=15d"
+    },
+    {
+      "label": "A15870/80/90 civil finals EF",
+      "feb": "24-26 Mar | TF=11d",
+      "mar": "24-26 Mar | TF=11d",
+      "apr": "21 Apr all | TF=15d LF"
+    },
+    {
+      "label": "A31580/A34220 vendor dwgs",
+      "feb": "Not tracked | -",
+      "mar": "30 Apr 26 | TF=1d",
+      "apr": "28 May 26 | TF=1d STUCK"
+    },
+    {
+      "label": "GF Sub-Station float",
+      "feb": "TF=14d | Feb",
+      "mar": "TF=3d | COLLAPSED",
+      "apr": "TF=3d | NOT FIXED"
+    },
+    {
+      "label": "Instrument cables TF",
+      "feb": "TF=0 | Feb",
+      "mar": "TF=0 | Mar",
+      "apr": "TF=0 | Apr EF Nov 4"
+    },
+    {
+      "label": "A44360 piping isometrics TF",
+      "feb": "TF=15d | Feb",
+      "mar": "TF=14d | Mar",
+      "apr": "TF=19d | Apr IMPROVED"
+    },
+    {
+      "label": "Activities completed/month",
+      "feb": "4,690 | base",
+      "mar": "+405 | Mar",
+      "apr": "+112 | Apr -72%"
+    }
+  ],
+  "slippages": [
+    {
+      "severity": "red",
+      "title": "Mechanical Completion slipped to 17 Feb 2027 - all milestones moved +28 days",
+      "body": "The uniform 28-day slip across MC, RFSU, and PAC was not visible in March. It has been driven by the accumulation of delays across multiple parallel paths - instrument cables (zero float since Feb, now finishing Nov 4), the construction completion chain (Equipment Installation and Electrical Construction now at TF=0 finishing Feb 17), and the civil sub-station structure still at only 3 days float three months running. No single activity caused this - it is systemic accumulation.",
+      "badge": "+28d to MC",
+      "prompt": "What is driving the 28-day slip to Mechanical Completion and what are the specific activities on the driving path?"
+    },
+    {
+      "severity": "red",
+      "title": "A31580 and A34220 vendor drawings - stuck at 1-day float for two consecutive months",
+      "body": "In March these were at 1-day float finishing April 30. In April they are still at 1-day float finishing May 28. The dates pushed by 28 days but the float stayed at 1 day. This means these activities are on or adjacent to the critical path and the vendor has not accelerated delivery despite the short float. This is now a persistent risk requiring formal vendor escalation - not just an expediting call, but a contractual notice and recovery plan.",
+      "badge": "2 months at 1d",
+      "prompt": "A31580 and A34220 vendor drawings have been at 1-day float for two months. What escalation is now needed?"
+    },
+    {
+      "severity": "red",
+      "title": "GF Sub-Station - 3-day float for the second consecutive month, redeployment action not evidenced",
+      "body": "In March the sub-station dropped from 14 days to 3 days float and the recommendation was to redeploy the finished civil foundation crew there. In April it is still at 3 days float (EF Feb 14, LF Feb 17 2027). The crew redeployment either did not happen or has not yet had measurable impact. With MC now slipped to Feb 17, the sub-station is 3 days from the new MC date - it is effectively on the critical path and must be treated as such immediately.",
+      "badge": "Still 3d - 2nd month",
+      "prompt": "The GF Sub-Station has been at 3 days float for two months. Has the civil crew redeployment happened and what is the current state?"
+    },
+    {
+      "severity": "red",
+      "title": "C1059 Punch List Close Out (Construction/Mechanical) - new critical entry at 3 days float",
+      "body": "This activity was not prominent in previous months and has appeared in April at TF=3d, finishing Feb 14, 2027 - 3 days before the new MC date of Feb 17. This is the construction punch list clearance that gates MC. At 3 days float, any scope growth in the punch list, any re-inspection requirement, or any vendor punch item that takes more than 3 days to close will push MC beyond Feb 17. Punch list management must start being tracked in weekly reports immediately.",
+      "badge": "New | TF=3d",
+      "prompt": "A new activity C1059 Punch List Close Out has appeared at 3 days float. What is this and why is it critical?"
+    },
+    {
+      "severity": "red",
+      "title": "Instrumentation/Telecom construction chain - 1-day float to Feb 2027 MC",
+      "body": "Instrumentation/Telecom Construction, Telecommunication System Installation, and PAGA+Telephone all now show TF=1d finishing Feb 16-19 2027. These are long-duration field installation activities that must complete before RFSU. With only 1 day of float on a chain running for months, there is no room for any equipment delivery delay, access issue, or labour dispute. The instrument cables (TF=0, finishing Nov 4) feed directly into this chain - if cables slip, the entire telecom/instrument construction chain goes negative.",
+      "badge": "TF=1d | long chain",
+      "prompt": "Telecom and instrumentation construction are at 1-day float finishing Feb 2027. What actions are needed now?"
+    },
+    {
+      "severity": "amber",
+      "title": "Completion rate slowed 72% - 405 activities/month in March vs only 112 in April",
+      "body": "This is a significant trend signal. The Feb to Mar burst of 405 completions was driven by the large TA piping workpack and early engineering activities closing out. By April that reservoir is exhausted. The 112 completions in April represent the genuine construction execution rate, which is now the relevant benchmark. With 1,757 activities not yet started, maintaining even this rate will be challenging without a productivity push.",
+      "badge": "-72% rate drop",
+      "prompt": "The completion rate dropped from 405 activities per month to 112. What does this mean for the project execution?"
+    }
+  ],
+  "improvements": [
+    {
+      "severity": "green",
+      "title": "C1000 float grew from +4d (Mar) to +15d (Apr) - compressor chain is the healthiest it has been",
+      "body": "Despite MC slipping 28 days, C1000 (FG Foundation Check, start Apr 21, finish May 9) now has 15 days of float against a late finish of May 24. C1002 baseplate setting has 15 days of float. The entire compressor chain from C1007 through C1014 now has 10-15 days of float. This means the compressor installation chain is NOT the driver of the MC slip - other chains are. The civil foundation work, though persistently delayed in absolute terms, has actually delivered a comfortable buffer for the compressor sequence.",
+      "badge": "+15d TF - best position",
+      "prompt": "C1000 foundation check now has 15 days of float despite the civil work slipping. How is this possible and how do I protect it?"
+    },
+    {
+      "severity": "green",
+      "title": "A44360 piping isometrics IFR - float improved to 19 days, spool fabrication window opened",
+      "body": "In March this was at 14 days float finishing Apr 24. In April it has 19 days float finishing May 22. Despite the date slipping, the late finish pushed further so there is now more room. The first piping lot (84.D50) is still in progress finishing May 28 at 6 days float. The spool fabrication can begin in earnest on May isometrics and the manufacturing chain (A28560, A28570) now has 39 days of float - a genuine buffer that did not exist before.",
+      "badge": "19d float | fab ready",
+      "prompt": "Piping isometrics A44360 improved from 14 days float to 19 days. How can I use this to accelerate spool fabrication?"
+    },
+    {
+      "severity": "green",
+      "title": "Second piping lot (85.D10) - 28 days float, delivery July, well ahead of installation need",
+      "body": "85.D10 is forecast to deliver July 15 with a late finish of August 12 - 28 days of float. Given GF piping installation (AG works) doesn't start until well after C1002 baseplate setting in May, this delivery timeline is comfortable. The piping supply chain has more buffer than the instrument and telecom chains, making it a relative strength for the rest of 2026.",
+      "badge": "28d float | on track",
+      "prompt": "The second piping lot 85.D10 now shows as a future activity with 28 days float. How does this feed into the GF piping installation sequence?"
+    }
+  ],
+  "charts": [
+    {
+      "id": "floatChart",
+      "title": "Float profile - three-month comparison (in-progress activities)",
+      "type": "bar",
+      "canvas_label": "Grouped bar chart comparing float bands across February March and April 2026",
+      "legend": [
+        { "label": "February", "color": "#B4B2A9" },
+        { "label": "March", "color": "#BA7517" },
+        { "label": "April", "color": "#E24B4A" }
+      ],
+      "labels": [
+        "Critical (TF=0)",
+        "Near-critical (1-14d)",
+        "Low float (15-42d)",
+        "Healthy (>42d)"
+      ],
+      "datasets": [
+        {
+          "label": "Feb",
+          "data": [5, 28, 31, 109],
+          "backgroundColor": "#B4B2A9",
+          "barThickness": 18
+        },
+        {
+          "label": "Mar",
+          "data": [13, 83, 81, 336],
+          "backgroundColor": "#BA7517",
+          "barThickness": 18
+        },
+        {
+          "label": "Apr",
+          "data": [17, 52, 62, 446],
+          "backgroundColor": "#E24B4A",
+          "barThickness": 18
+        }
+      ],
+      "options": {
+        "responsive": true,
+        "maintainAspectRatio": false,
+        "legend_display": false,
+        "tooltip_label_format": "<month>: <value>"
+      }
+    },
+    {
+      "id": "compChart",
+      "title": "Completion rate trend - monthly new activities completed",
+      "type": "bar",
+      "canvas_label": "Bar chart showing completions per month: 4690 cumulative at February, plus 405 in March, plus 112 in April",
+      "labels": [
+        "Feb 2026 (base)",
+        "Mar 2026 (+405)",
+        "Apr 2026 (+112)"
+      ],
+      "datasets": [
+        {
+          "label": "New completions",
+          "data": [4690, 405, 112],
+          "backgroundColor": ["#B4B2A9", "#1D9E75", "#E24B4A"],
+          "barThickness": 48
+        }
+      ],
+      "options": {
+        "responsive": true,
+        "maintainAspectRatio": false,
+        "legend_display": false,
+        "tooltip_label_format": "<value> activities"
+      }
+    }
+  ],
+  "priority_actions": [
+    {
+      "rank": 1,
+      "title": "Formal vendor notice - A31580 and A34220",
+      "body": "Two months at 1-day float. Issue a contractual notice to vendor now. Require a written recovery plan with weekly milestone dates. Current finish May 28, late finish May 29 - no room for any slippage.",
+      "priority": "This week - 2-month persistent risk",
+      "prompt": "What formal contractual notice should I issue to the vendors of A31580 and A34220 given two months of persistent 1-day float?"
+    },
+    {
+      "rank": 2,
+      "title": "MC recovery plan - identify compressible activities",
+      "body": "The 28-day slip must be formally assessed. The instrument/telecom chain at 1-day float is the critical path. Identify whether overlapping field installation phases can recover 2-3 weeks through fast-tracking.",
+      "priority": "This month - 28d to recover",
+      "prompt": "How do I recover the 28-day MC slip? Which activities on the critical path can realistically be compressed?"
+    },
+    {
+      "rank": 3,
+      "title": "Sub-station intervention - escalate now",
+      "body": "Three months of sub-station float data: 14d -> 3d -> 3d. The recommended civil crew redeployment from March has not resolved it. A specific acceleration plan with daily targets is now required.",
+      "priority": "This week - effectively critical",
+      "prompt": "The GF Sub-Station is at 3 days float for the second consecutive month. What specific construction intervention is needed this week?"
+    },
+    {
+      "rank": 4,
+      "title": "Start punch list management - C1059",
+      "body": "C1059 (construction punch list closeout) at 3 days float to Feb 17 MC. Begin punch list capture now, 9 months before MC, to avoid the typical end-of-project punch list backlog that pushes MC.",
+      "priority": "This month - proactive",
+      "prompt": "How do I set up a weekly punch list tracking system for C1059 given it is now at 3 days float to the new MC date?"
+    },
+    {
+      "rank": 5,
+      "title": "Instrument cable manufacturer visit",
+      "body": "Zero float for three consecutive months, now finishing Nov 4. A physical manufacturer site visit (not a phone call) should be conducted in May to confirm production progress and flag any material shortages early.",
+      "priority": "May - 3rd month at TF=0",
+      "prompt": "Instrument cables have been at zero float for three months. What manufacturer visit and contractual action is now required?"
+    },
+    {
+      "rank": 6,
+      "title": "Re-sequence to offset delays with advantages",
+      "body": "Compressor chain has 15 days float - more than it has had all year. Piping chain has 19-39 days float. Use this buffer deliberately: advance piping installation to create space for the telecom/instrument chain to recover.",
+      "priority": "May - use the buffer",
+      "prompt": "The piping and compressor chains have improved. How do I use that advantage to offset the telecom and civil slip?"
+    }
+  ]
+}

@@ -1,0 +1,196 @@
+{
+  "project": {
+    "label": "Borouge EU3 - H2 Extraction EPC - Predecessor / Successor Strategy",
+    "title": "Schedule Acceleration and De-Lagging",
+    "subtitle": "Securing an April 2027 RFSU handover via back-end fast-tracking and front-end de-lagging",
+    "status": "~3 Month Gain - Target April 2027"
+  },
+  "kpis": [
+    {
+      "id": "target_handover",
+      "label": "Target Handover",
+      "value": "April 2027",
+      "sub": "vs baseline 20 Jul 2027 (~3 months earlier)",
+      "tone": "green"
+    },
+    {
+      "id": "back_end_recovery",
+      "label": "Back-End Recovery",
+      "value": "81d",
+      "sub": "Parallel execution and system handovers",
+      "tone": "teal"
+    },
+    {
+      "id": "front_end_recovery",
+      "label": "Front-End Recovery",
+      "value": "84d",
+      "sub": "De-lagging administrative barriers",
+      "tone": "amber"
+    },
+    {
+      "id": "combined_gain",
+      "label": "Combined Gain",
+      "value": "~90d",
+      "sub": "Non-competing approaches executed simultaneously",
+      "tone": "green"
+    },
+    {
+      "id": "loa_lag_chains",
+      "label": "LOA Lag Chains",
+      "value": "885",
+      "sub": "Relationships tracing to A1-PM-PMM-0001 (LOA)",
+      "tone": "amber"
+    },
+    {
+      "id": "total_lag_days",
+      "label": "Total Lag-Days",
+      "value": "26,387",
+      "sub": "Administrative wait time embedded in logic",
+      "tone": "amber"
+    },
+    {
+      "id": "pid_freeze_lag",
+      "label": "P&ID Freeze Lag",
+      "value": "291d",
+      "sub": "Full-set freeze replaced by phased delivery",
+      "tone": "teal"
+    },
+    {
+      "id": "spi_shift",
+      "label": "SPI Gate Shift",
+      "value": "Day 63 -> 21",
+      "sub": "Protocol unlocks 18 piping/instrument deliverables",
+      "tone": "teal"
+    }
+  ],
+  "timeline": {
+    "span_days": 515,
+    "baseline_start": "20 Feb 2026",
+    "target": "April 2027",
+    "baseline_end": "20 Jul 2027",
+    "combined_recovery": "~3 Months"
+  },
+  "root_problem": {
+    "anchor_activity": "A1-PM-PMM-0001 (LOA)",
+    "lag_relationships": 885,
+    "total_lag_days": 26387,
+    "paths": [
+      {
+        "name": "Path 1: Site Prep",
+        "description": "Blocked by admin lag before physical mobilization can begin",
+        "status": "BLOCKED"
+      },
+      {
+        "name": "Path 2: Procurement",
+        "description": "Waiting for full P&ID freeze (291 days) before ITB issuance",
+        "status": "LAGGED"
+      },
+      {
+        "name": "Path 3: Engineering",
+        "description": "SPI database access gated at Day 63 - blocks 18 deliverables",
+        "status": "LAGGED"
+      },
+      {
+        "name": "Path 4: Permitting",
+        "description": "Civil permits deferred to post-LOA despite bid-phase opportunity",
+        "status": "DEFERRED"
+      },
+      {
+        "name": "Path 5: Fabrication",
+        "description": "Long-lead procurement start delayed by admin prerequisites",
+        "status": "DELAYED"
+      }
+    ]
+  },
+  "approach_1": {
+    "title": "Back-End Fast-Tracking",
+    "total_days": 81,
+    "items": [
+      {
+        "name": "Start-up Lags",
+        "days": 45,
+        "detail": "Parallel execution eliminates 90-day wait at project start-up"
+      },
+      {
+        "name": "System Testing",
+        "days": 14,
+        "detail": "Pre-commissioning starts at 70% hydrotesting"
+      },
+      {
+        "name": "E&I Integration",
+        "days": 12,
+        "detail": "Rolling handover on first structural rack termination"
+      },
+      {
+        "name": "Long-Lead Items",
+        "days": 10,
+        "detail": "Civil and piping run with Certified for Construction data"
+      }
+    ]
+  },
+  "approach_2": {
+    "title": "Front-End De-Lagging",
+    "total_days": 84,
+    "primary": [
+      {
+        "name": "P&ID Phased Delivery",
+        "days": 35,
+        "detail": "Replaces 291-day full-set freeze with phased area delivery"
+      },
+      {
+        "name": "Pre-LOA Permitting",
+        "days": 28,
+        "detail": "Pulls site prep from Day 223 to Day 181"
+      }
+    ],
+    "secondary": [
+      {
+        "name": "SPI Database Access",
+        "days": 42,
+        "detail": "Moves gate from Day 63 to Day 21"
+      },
+      {
+        "name": "Subcontract Fast-Tracking",
+        "days": 42,
+        "detail": "Issues ITBs ~6 weeks earlier using preliminary data"
+      },
+      {
+        "name": "Early CM Mobilization",
+        "days": 28,
+        "detail": "Mobilizes field engineering leadership ~4 weeks earlier"
+      }
+    ]
+  },
+  "comparison": [
+    {
+      "dimension": "Locus of Impact",
+      "approach1": "Back-End (Testing/Commissioning)",
+      "approach2": "Front-End (Engineering/Procurement/Civil)"
+    },
+    {
+      "dimension": "Primary Mechanism",
+      "approach1": "Parallel Execution",
+      "approach2": "Lag Removal"
+    },
+    {
+      "dimension": "Execution Shift",
+      "approach1": "Area-to-System handovers",
+      "approach2": "Sequential-to-Concurrent workflows"
+    },
+    {
+      "dimension": "Primary Requirement",
+      "approach1": "Field coordination uplift",
+      "approach2": "Client/vendor contractual agreements"
+    },
+    {
+      "dimension": "Nature of Savings",
+      "approach1": "81 days",
+      "approach2": "84 days"
+    }
+  ],
+  "mvt": {
+    "principle": "Minimum Viable Trigger",
+    "definition": "Move to the next phase as soon as minimum required data/work is available instead of waiting for 100% completion.",
+    "result": "April 2027 RFSU target secured"
+  }
+}
