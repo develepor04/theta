@@ -1,11 +1,9 @@
 name: Deploy Backend to Azure
-
 on:
   push:
     branches: [main]
     paths-ignore:
       - 'frontend/**'
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -17,8 +15,8 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Install dependencies
-        run: pip install -r requirements.txt
+      - name: Install dependencies into package
+        run: pip install -r requirements.txt --target=".python_packages/lib/site-packages"
 
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v3
